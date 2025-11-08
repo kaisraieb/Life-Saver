@@ -27,8 +27,8 @@ include "./includes/head.php" ;?>
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="email" class="form-control form-control-lg"  name="email"/>
-                    <label class="form-label" for="form2Example17">Email address</label>
+                    <input type="text" id="username" class="form-control form-control-lg"  name="username"/>
+                    <label class="form-label" for="form2Example17">Username</label>
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
