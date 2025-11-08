@@ -15,15 +15,18 @@ if (!empty($_POST)) {
             // Verify user password and set $_SESSION
             if ($user && password_verify($_POST['password'], $user->password)) {
                 $_SESSION['user_id'] = $user->ID;
+                header("Location : index.php") ; 
             }
-            header("Location : ".DOAMAIN."login.php") ; 
+            header("Location : login.php") ; 
 
             
         } catch (PDOException $e) {
             error_log("Database error: " . $e->getMessage());
-            header("Location : ".DOAMAIN."login.php") ; 
+            header("Location : login.php") ; 
         }
     }
+    header("Location : login.php") ; 
+
 }
-header("Location : ".DOAMAIN."login.php") ; 
+header("Location : login.php") ;  ; 
 ?>
