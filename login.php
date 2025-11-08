@@ -1,5 +1,6 @@
 <?php 
-include "./includes/head.php" ;?> 
+include "./includes/head.php" ;
+?> 
 <body>
 <?php
   include "./includes/header.php" ; ?>
@@ -16,7 +17,7 @@ include "./includes/head.php" ;?>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form>
+                <form action="http://localhost/Blood-Donation/handlers/loginHandler.php" method="POST">
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <a class="navbar-brand" href="#">
@@ -37,7 +38,7 @@ include "./includes/head.php" ;?>
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-lg btn-block" type="button">Login</button>
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-lg btn-block" type="submit">Login</button>
                   </div>
                 </form>
 
