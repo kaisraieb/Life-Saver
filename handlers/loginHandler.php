@@ -7,12 +7,12 @@ if (!empty($_POST)) {
     if (isset($_POST['username']) && isset($_POST['password'])) {
         try {
             
-            $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-            $stmt->execute([$_POST['username']]);
+            $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE nom_utilisateur = ?"); // Protection Contre les SQL injections hekka 3lh n7oto ?
+            $stmt->execute([$_POST['nom_utilisateur']]);
             $user = $stmt->fetch(PDO::FETCH_OBJ);
             
             // Verify user password and set SESSION
-            if ($user && password_verify($_POST['password'], $user->password)) {
+            if ($user && password_verify($_POST['mot_de_passe'], $user->password)) {
                 $_SESSION['user_id'] = $user->ID;
                 header("Location:".DOMAIN."index.php");
                 exit;
