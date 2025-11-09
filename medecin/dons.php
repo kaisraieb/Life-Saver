@@ -29,11 +29,11 @@ if(isset($_SESSION["user_id"])){
                         if ($stmt->rowCount() > 0) {
                             while ($row = $stmt->fetch()) {
                                 echo "<tr>
-                                    <td>" . htmlspecialchars($row['id_don'], ENT_QUOTES, 'UTF-8') . "</td>
-                                    <td class=''>" . htmlspecialchars($row['date_don'], ENT_QUOTES, 'UTF-8') . "</td>
-                                    <td class=''>" . htmlspecialchars($row['volume_ml'], ENT_QUOTES, 'UTF-8') . "</td>
-                                    <td class=''>" . htmlspecialchars($row['id_centre'], ENT_QUOTES, 'UTF-8') . "</td>
-                                    <td class=''><a href='/medecin/test.php?id_don=" . htmlspecialchars($row['id_don'], ENT_QUOTES, 'UTF-8') . "' class='btn btn-outline-light btn-sm'>
+                                    <td>" . htmlspecialchars($row['id_don']) . "</td>
+                                    <td class=''>" . htmlspecialchars($row['date_don']) . "</td>
+                                    <td class=''>" . htmlspecialchars($row['volume_ml']) . "</td>
+                                    <td class=''>" . htmlspecialchars($row['id_centre']) . "</td>
+                                    <td class=''><a href='/medecin/test.php?id_don=" . htmlspecialchars($row['id_don']) . "' class='btn btn-danger btn-sm'>
                     <i class='bi bi-box-arrow-right'></i> Edit 
                 </a></td>
                                   </tr>";
