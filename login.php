@@ -4,7 +4,7 @@ $errors = [
     "invalid_credentials" => "Username Or Password is incorrect",
     "missing_fields" => "Don't Send Empty fields!!",
     "database_error" => "Error 500",
-    "access_report" => "You Try To access The Handler Directly That's Forbidden a Report will be sent"
+    "access_report" => "You Try To access The Handler Directly That's Forbidden a Report will be sent , Your IP : ".$_SERVER['REMOTE_ADDR']
 ];
 ?> 
 <body>

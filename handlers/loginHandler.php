@@ -38,7 +38,7 @@ if (!empty($_POST)) {
     }
 } else {
     // jey direct maghir post 
-    header("Location:".DOMAIN."login.php?error=acees_report");
+    header("Location:".DOMAIN."login.php?error=access_report");
     exit;
 }
 ?>
