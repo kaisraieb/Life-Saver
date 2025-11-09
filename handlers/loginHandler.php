@@ -14,11 +14,11 @@ if (!empty($_POST)) {
             // Verify user password and set SESSION
             if ($user && password_verify($_POST['password'], $user->password)) {
                 $_SESSION['user_id'] = $user->ID;
-                header("Location: index.php");
+                header("Location:".DOMAIN."index.php");
                 exit;
             } else {
                 // Creds Ghalta 
-                header("Location: login.php?error=invalid_credentials");
+                header("Location:".DOMAIN."login.php?error=invalid_credentials");
                 exit;
             }
             
@@ -34,7 +34,7 @@ if (!empty($_POST)) {
     }
 } else {
     // jey direct maghir post 
-    header("Location: login.php");
+    header("Location:".DOMAIN."login.php?error=acees_report");
     exit;
 }
 ?>
