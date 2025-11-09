@@ -8,18 +8,18 @@ if (!empty($_POST)) {
         try {
             
             $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE nom_utilisateur = ?"); // Protection Contre les SQL injections hekka 3lh n7oto ?
-            $stmt->execute([$_POST['nom_utilisateur']]);
+            $stmt->execute([$_POST['username']]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             
             // Verify user password and set SESSION
-            if ($user && password_verify($_POST['mot_de_passe'], $user["mot_de_passe"])) {
+            if ($user && password_verify($_POST['password'], $user["mot_de_passe"])) {
                 $_SESSION['user_id'] = $user["id"];
                 header("Location:".DOMAIN."index.php");
                 exit;
             } else {
                 // Creds Ghalta 
                header("Location:".DOMAIN."login.php?error=invalid_credentials");
-                echo "ERROR mch majwoud" ;
+               echo "ERROR mch majwoud" ;
                 exit;
             }
             
