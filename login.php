@@ -1,5 +1,13 @@
 <?php 
 include "./includes/head.php" ;
+$errors = [ 
+    "invalid_credentials" => "Username Or Password is incorrect",
+    "missing_fields" => "Don't Send Empty fields!!",
+    "database_error" => "Error 500",
+    "403" => "403 Forbidden" ,
+    "401" => "401 Unauthorized",
+    "access_report" => "You Try To access The Handler Directly That's Forbidden a Report will be sent , Your IP : ".$_SERVER['REMOTE_ADDR']
+];
 ?> 
 <body>
 <?php
@@ -26,6 +34,16 @@ include "./includes/head.php" ;
                   </div>
 
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                  <?php 
+                  if(isset($_GET["error"])) {
+                    echo '
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error:</strong> ' . htmlspecialchars($errors[$_GET["error"]]) . '
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+
+                  }
+                  ?>
 
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input type="text" id="username" class="form-control form-control-lg"  name="username"/>

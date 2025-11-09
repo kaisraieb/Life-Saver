@@ -15,7 +15,7 @@ if (!empty($_POST)) {
             if ($user && password_verify($_POST['password'], $user["mot_de_passe"])) {
                 $_SESSION['user_id'] = $user["id_utilisateur"];
                 $_SESSION['user_role'] = $user["role"] ; 
-                header("Location:".DOMAIN."index.php?message=".$_SESSION["user_role"]);
+                header("Location:".DOMAIN.strtolower($user['role'])."/index.php");
                 exit;
             } else {
                 // Creds Ghalta 
@@ -38,7 +38,7 @@ if (!empty($_POST)) {
     }
 } else {
     // jey direct maghir post 
-    header("Location:".DOMAIN."login.php?error=acees_report");
+    header("Location:".DOMAIN."login.php?error=access_report");
     exit;
 }
 ?>
