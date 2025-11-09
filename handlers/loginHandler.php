@@ -9,11 +9,11 @@ if (!empty($_POST)) {
             
             $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE nom_utilisateur = ?"); // Protection Contre les SQL injections hekka 3lh n7oto ?
             $stmt->execute([$_POST['nom_utilisateur']]);
-            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
             
             // Verify user password and set SESSION
-            if ($user && password_verify($_POST['mot_de_passe'], $user->mote_de_passe)) {
-                $_SESSION['user_id'] = $user->ID;
+            if ($user && password_verify($_POST['mot_de_passe'], $user["mot_de_passe"])) {
+                $_SESSION['user_id'] = $user["id"];
                 header("Location:".DOMAIN."index.php");
                 exit;
             } else {
