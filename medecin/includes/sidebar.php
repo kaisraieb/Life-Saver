@@ -5,14 +5,20 @@
         <h5 class="text-center mb-4">Menu</h5>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="index.php" class="nav-link text-white">Tableau de Bord</a>
-            </li>
-            <li class="nav-item">
-                <a href="dons.php" class="nav-link text-white">Dons</a>
-            </li>
-            <li class="nav-item">
-                <a href="tests.php" class="nav-link text-white">Tests</a>
-            </li>
+                    <a href="/medecin/index.php" class="nav-link text-white">Tableau de Bord</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/medecin/dons.php" class="nav-link text-white">Dons</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/medecin/tests.php" class="nav-link text-white">Tests</a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a href="/medecin/logout.php" class="btn btn-outline-light">
+                        <i class="bi bi-box-arrow-right"></i> Déconnexion
+                    </a>
+                </li>
         </ul>
     </nav>
 
@@ -25,7 +31,7 @@
         <div class="offcanvas-body">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link text-white">Tableau de Bord</a>
+                    <a href="/medecin/index.php" class="nav-link text-white">Tableau de Bord</a>
                 </li>
                 <li class="nav-item">
                     <a href="/medecin/dons.php" class="nav-link text-white">Dons</a>
@@ -35,8 +41,9 @@
                     
                 </li>
                 <li class="nav-item">
-                    <a href="/medecin/logout.php" class="nav-link text-white">Logout</a>
-                    
+                    <a href="/medecin/logout.php" class="btn btn-outline-light">
+                        <i class="bi bi-box-arrow-right"></i> Déconnexion
+                    </a>
                 </li>
             </ul>
                 
