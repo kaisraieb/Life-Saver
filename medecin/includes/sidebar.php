@@ -28,10 +28,10 @@
                     <a href="index.php" class="nav-link text-white">Tableau de Bord</a>
                 </li>
                 <li class="nav-item">
-                    <a href="dons.php" class="nav-link text-white">Dons</a>
+                    <a href="/medecin/dons.php" class="nav-link text-white">Dons</a>
                 </li>
                 <li class="nav-item">
-                    <a href="tests.php" class="nav-link text-white">Tests</a>
+                    <a href="/medecin/tests.php" class="nav-link text-white">Tests</a>
                     
                 </li>
                 <li class="nav-item">
