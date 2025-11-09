@@ -23,8 +23,8 @@ if (!empty($_POST)) {
             }
             
         } catch (PDOException $e) {
-            error_log("Database error: " . $e->getMessage());
             header("Location: login.php?error=database_error");
+            error_log("Database error: " . $e->getMessage());
             exit;
         }
     } else {
