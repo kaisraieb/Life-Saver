@@ -1,5 +1,4 @@
-<?php
-require_once "/utils/connection.php" ;?>
+<?php require_once "./utils/connection.php" ;?>
 <body>
 <?php include "/includes/header.php"; ?>
 <div class="container">
