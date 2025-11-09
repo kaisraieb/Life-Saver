@@ -1,5 +1,5 @@
 <?php
-require_once '../config.php';
+require '../config.php';
 
 try {
     // 1. Définition de la chaîne de connexion (DSN)
