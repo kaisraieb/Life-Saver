@@ -1,6 +1,6 @@
 <?php 
 include "./includes/head.php" ;
-errors = [ "invalid_credentials" => "Username Or Password is incorrect" , "missing_fields" => "Dont Send Empty fields!!" , "database_error"=>"Error 500" , "acees_report" : "You Try To access The Handler Directly Thats Forrbiden a Report will be sent "] ;
+$errors = [ "invalid_credentials" => "Username Or Password is incorrect" , "missing_fields" => "Dont Send Empty fields!!" , "database_error"=>"Error 500" , "acees_report" : "You Try To access The Handler Directly Thats Forrbiden a Report will be sent "] ;
 ?> 
 <body>
 <?php
