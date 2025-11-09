@@ -12,7 +12,7 @@ if (!empty($_POST)) {
             $user = $stmt->fetch(PDO::FETCH_OBJ);
             
             // Verify user password and set SESSION
-            if ($user && password_verify($_POST['mot_de_passe'], $user->password)) {
+            if ($user && password_verify($_POST['mot_de_passe'], $user->mote_de_passe)) {
                 $_SESSION['user_id'] = $user->ID;
                 header("Location:".DOMAIN."index.php");
                 exit;
