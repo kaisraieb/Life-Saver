@@ -1,7 +1,7 @@
 <?php
-require_once "./config.php";
-require_once './utils/connection.php' ; 
-include "./includes/head.php"; 
+require_once "config.php";
+require_once '/utils/connection.php' ; 
+include "/includes/head.php"; 
 ?>
 <body>
 <?php include "./includes/header.php"; ?>
