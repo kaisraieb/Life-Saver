@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-require_once '/utils/connection.php' ; 
+require_once __DIR__ . '/utils/connection.php';
 include "/includes/head.php"; 
 ?>
 <body>
