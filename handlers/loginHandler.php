@@ -18,13 +18,13 @@ if (!empty($_POST)) {
                 exit;
             } else {
                 // Creds Ghalta 
-                header("Location:".DOMAIN."login.php?error=invalid_credentials");
+               header("Location:".DOMAIN."login.php?error=invalid_credentials");
                 echo "ERROR mch majwoud" ;
                 exit;
             }
             
         } catch (PDOException $e) {
-            header("Location: login.php?error=database_error");
+            header("Location:".DOMAIN."login.php?error=database_error");
             echo "ERROR BASE DE DONNNE" ;
             error_log("Database error: " . $e->getMessage());
             exit;
