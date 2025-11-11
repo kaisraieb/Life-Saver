@@ -9,7 +9,7 @@ if(isset($_SESSION["user_id"])){
         if($_GET["id_don"]){
          include 'includes/header.php'; 
          include "includes/sidebar.php"; 
-          $stmt = $pdo->query("SELECT * FROM dons WHERE dons.id_don = ? ");
+          $stmt = $pdo->query("SELECT * FROM dons WHERE id_don = ? ");
           $stmt->execute([$_GET['id_don']]);
           $don = $stmt->fetch(PDO::FETCH_ASSOC);
           if(count($don)>0){
