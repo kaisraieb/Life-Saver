@@ -67,7 +67,7 @@ if (!empty($_POST)) {
             
         } catch (PDOException $e) {
             error_log("Database error in testHandler: " . $e->getMessage());
-            header("Location:" . DOMAIN . "medecin/");
+            header("Location:" . DOMAIN . "medecin/?error=database_error".$e->getMessage());
             exit;
         }
     } else {
