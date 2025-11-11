@@ -299,7 +299,7 @@ h5 {
             display: block;
             width: 60px;
             height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(rgba(227, 6, 19, 0.9), rgba(179, 0, 0, 0.9));
             margin: 10px auto;
             border-radius: 2px;
         }
@@ -321,7 +321,7 @@ h5 {
         .card-img-top {
             height: 180px;
             object-fit: cover;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(rgba(227, 6, 19, 0.9), rgba(179, 0, 0, 0.9));
             display: flex;
             align-items: center;
             justify-content: center;
