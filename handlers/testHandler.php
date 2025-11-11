@@ -12,8 +12,8 @@ if (!empty($_POST)) {
     if (isset($_POST['id_don']) && isset($_POST['confirm']) && isset($_POST['note'])) {
         try {
             
-            $id_don = $_POST['id_don'] ;
-            $confirm = $_POST['confirm'] ;
+            $id_don = $_POST['id_don'];
+            $confirm = $_POST['confirm'];
             $note = trim($_POST['note']);
             
             if ($id_don === false || $id_don <= 0) {
@@ -26,10 +26,8 @@ if (!empty($_POST)) {
                 exit;
             }
             
-            
-            
-            $stmt = $pdo->prepare(" SELECT * FROM dons WHERE id_don = ? ");
-            $stmt->execute($id_don);
+            $stmt = $pdo->prepare("SELECT * FROM dons WHERE id_don = ?");
+            $stmt->execute([$id_don]); 
             $don = $stmt->fetch(PDO::FETCH_ASSOC);
             
             if (!$don) {
@@ -39,38 +37,33 @@ if (!empty($_POST)) {
             
             $updateStmt = $pdo->prepare("
                 UPDATE dons 
-                SET 
-                statut = ?,
+                SET statut = ?
                 WHERE id_don = ?
-            ");
-            
+            "); 
             
             $statut_test = ($confirm == 1) ? 'VALIDE' : 'REJETÉ';
             
-           $insertStmt = $pdo->prepare("INSERT INTO `tests_don`(`id_don`, `est_conforme`, `notes_medecin`) VALUES ('?','?','?')");
-           $insertStmt->execute([$id_don, $confirm , $note]) ;
-        if($insertStmt->rowCount()>0){
-            $updateStmt->execute([
-                $statut_test,
-                $id_don
-            ]);
             
-            if ($updateStmt->rowCount() > 0) {
+            $insertStmt = $pdo->prepare("INSERT INTO `tests_don`(`id_don`, `est_conforme`, `notes_medecin`) VALUES (?, ?, ?)");
+            $insertStmt->execute([$id_don, $confirm, $note]);
+            
+            if($insertStmt->rowCount() > 0){
+                $updateStmt->execute([
+                    $statut_test,
+                    $id_don
+                ]);
                 
-                header("Location:" . DOMAIN . "medecin/dons.php?success=201");
-                exit;
+                if ($updateStmt->rowCount() > 0) {
+                    header("Location:" . DOMAIN . "medecin/dons.php?success=201");
+                    exit;
+                } else {
+                    header("Location:" . DOMAIN . "medecin/?error=404");
+                    exit;
+                }
             } else {
-                
                 header("Location:" . DOMAIN . "medecin/?error=404");
                 exit;
             }
-        }
-        else {
-                
-                header("Location:" . DOMAIN . "medecin/?error=404");
-                exit;
-        }
-
             
         } catch (PDOException $e) {
             error_log("Database error in testHandler: " . $e->getMessage());
@@ -78,7 +71,6 @@ if (!empty($_POST)) {
             exit;
         }
     } else {
-        
         header("Location:" . DOMAIN . "medecin/test.php");
         exit;
     }
@@ -86,4 +78,3 @@ if (!empty($_POST)) {
     header("Location:" . DOMAIN . "medecin/dons.php");
     exit;
 }
-?>
