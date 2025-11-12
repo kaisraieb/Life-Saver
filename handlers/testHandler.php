@@ -44,8 +44,8 @@ if (!empty($_POST)) {
             $statut_test = ($confirm == 1) ? 'VALIDE' : 'REJETÉ';
             
             
-            $insertStmt = $pdo->prepare("INSERT INTO `tests_don`(`id_don`, `est_conforme`, `notes_medecin`) VALUES (?, ?, ?)");
-            $insertStmt->execute([$id_don, $confirm, $note]);
+            $insertStmt = $pdo->prepare("INSERT INTO `tests_don`(`id_don`,`date_test`, `est_conforme`, `notes_medecin`) VALUES (?,?, ?, ?)");
+            $insertStmt->execute([$id_don,date("Y-m-d H:i:s"), $confirm, $note]);
             
             if($insertStmt->rowCount() > 0){
                 $updateStmt->execute([
