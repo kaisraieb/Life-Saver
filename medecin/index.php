@@ -14,15 +14,15 @@ if(isset($_SESSION["user_id"])){
         <div class="col-md-3 mb-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <i class="bi-people fs-5" style = "color: #0d6efd;"></i>
                     
+                    <h5 class="card-title" style = "color: #0d6efd;" >Donneurs <i class="bi-people fs-5" style = "color: #0d6efd;"></i></h5> 
                     <h2 class="text-primary">
                         <?php
                             $stmt = $pdo->query("SELECT COUNT(*) FROM donneurs ");
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
-                    <h5 class="card-title" style = "color: #0d6efd;" >Donneurs</h5> 
+                    
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@ if(isset($_SESSION["user_id"])){
         <div class="col-md-3 mb-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    
+                    <h5 class="card-title" style="color : #198754 ;" >Dons valides <i class="bi-check-circle fs-5" style="color : #198754 ;"></i></h5>
                     <h2 class="text-success">
                         <?php
                             $stmt = $pdo->prepare("SELECT COUNT(*) FROM dons WHERE statut='VALIDE'  AND `id_centre`= ?");
@@ -39,7 +39,7 @@ if(isset($_SESSION["user_id"])){
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
-                    <h5 class="card-title" style="color : #198754 ;" >Dons valides <i class="bi-check-circle fs-5" style="color : #198754 ;"></i></h5>
+                    
                 </div>
             </div>
         </div>
@@ -49,14 +49,14 @@ if(isset($_SESSION["user_id"])){
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
                    
-                    
+                     <h5 class="card-title"  style="color : #ffc107 ;">Centres  <i class="bi bi-hospital fs-5" style="color : #ffc107 ;"></i></h5>
                     <h2 class="text-warning">
                         <?php
                             $stmt = $pdo->query("SELECT COUNT(*) FROM centres_collecte");
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
-                    <h5 class="card-title"  style="color : #ffc107 ;">Centres  <i class="bi bi-hospital fs-5" style="color : #ffc107 ;"></i></h5>
+                   
                 </div>
             </div>
         </div>
@@ -66,14 +66,14 @@ if(isset($_SESSION["user_id"])){
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
                     
-                    
+                    <h5 class="card-title" style="color : #dc3545 ;">En stock <i class="bi bi-hourglass fs-5" style="color : #dc3545 ;"></i></h5>
                     <h2 class="text-danger">
                         <?php
                             $stmt = $pdo->query("SELECT COUNT(*) FROM dons WHERE statut='EN STOCK'");
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
-                    <h5 class="card-title" style="color : #dc3545 ;">En stock <i class="bi bi-hourglass fs-5" style="color : #dc3545 ;"></i></h5>
+                    
                 </div>
             </div>
         </div>
