@@ -179,8 +179,8 @@ require_once '../config.php';
 require_once '../utils/connection.php'; 
 if(isset($_SESSION["user_id"])){
     if($_SESSION["user_role"] == "MEDECIN") {
-         include 'includes/header.php'; 
-         include "includes/sidebar.php"; ?> 
+         /*include 'includes/header.php'; 
+         include "includes/sidebar.php"; */?> 
           <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
