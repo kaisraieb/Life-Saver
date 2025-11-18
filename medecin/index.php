@@ -15,7 +15,7 @@ if(isset($_SESSION["user_id"])){
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">Donneurs</h5> 
-
+                    <i class="bi-people"></i>
                     <h2 class="text-primary">
                         <?php
                             $stmt = $pdo->query("SELECT COUNT(*) FROM donneurs AND `id_centre`= $_SESSION['centre_id']");
@@ -31,6 +31,7 @@ if(isset($_SESSION["user_id"])){
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
                     <h5 class="card-title">Dons valides</h5>
+                    <i class="bi-check-circle"></i>
                     <h2 class="text-success">
                         <?php
                             $stmt = $pdo->query("SELECT COUNT(*) FROM dons WHERE statut='VALIDE'  AND `id_centre`= $_SESSION['centre_id']");
