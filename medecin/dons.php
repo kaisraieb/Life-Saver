@@ -25,7 +25,7 @@ if(isset($_SESSION["user_id"])){
                 </thead>
                 <tbody>
                     <?php
-                        $stmt = $pdo->prepare("SELECT * FROM dons WHERE `statut` = 'EN STOCK' WHERE `id_centre`= ? ");
+                        $stmt = $pdo->prepare("SELECT * FROM dons WHERE `statut` = 'EN STOCK' AND `id_centre`= ? ");
                         $stmt->execute([$_SESSION['centre_id']]) ;
                         if ($stmt->rowCount() > 0) {
                             while ($row = $stmt->fetch()) {
