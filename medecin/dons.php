@@ -7,7 +7,7 @@ $messages = [
 $errors = [
     "404" => "Don Not Found" ,
     "500" => "Server Error : Test Not inserted"
-]
+] ;
 if(isset($_SESSION["user_id"])){
     if($_SESSION["user_role"] == "MEDECIN") {
          include 'includes/header.php'; 
