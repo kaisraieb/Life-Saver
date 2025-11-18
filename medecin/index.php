@@ -31,7 +31,7 @@ if(isset($_SESSION["user_id"])){
         <div class="col-md-3 mb-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <i class="bi-check-circle fs-5" style="color : #198754 ;"></i>
+                    
                     <h2 class="text-success">
                         <?php
                             $stmt = $pdo->prepare("SELECT COUNT(*) FROM dons WHERE statut='VALIDE'  AND `id_centre`= ?");
@@ -39,7 +39,7 @@ if(isset($_SESSION["user_id"])){
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
-                    <h5 class="card-title" style="color : #198754 ;" >Dons valides</h5>
+                    <h5 class="card-title" style="color : #198754 ;" >Dons valides <i class="bi-check-circle fs-5" style="color : #198754 ;"></i></h5>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@ if(isset($_SESSION["user_id"])){
         <div class="col-md-3 mb-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <i class="bi bi-hospital fs-5" style="color : #ffc107 ;"></i>
+                   
                     
                     <h2 class="text-warning">
                         <?php
@@ -56,7 +56,7 @@ if(isset($_SESSION["user_id"])){
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
-                    <h5 class="card-title"  style="color : #ffc107 ;">Centres</h5>
+                    <h5 class="card-title"  style="color : #ffc107 ;">Centres  <i class="bi bi-hospital fs-5" style="color : #ffc107 ;"></i></h5>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@ if(isset($_SESSION["user_id"])){
         <div class="col-md-3 mb-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <i class="bi bi-hourglass fs-5" style="color : #dc3545 ;"></i>
+                    
                     
                     <h2 class="text-danger">
                         <?php
@@ -73,7 +73,7 @@ if(isset($_SESSION["user_id"])){
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
-                    <h5 class="card-title" style="color : #dc3545 ;">En stock</h5>
+                    <h5 class="card-title" style="color : #dc3545 ;">En stock <i class="bi bi-hourglass fs-5" style="color : #dc3545 ;"></i></h5>
                 </div>
             </div>
         </div>
