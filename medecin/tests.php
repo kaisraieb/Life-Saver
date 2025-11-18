@@ -16,7 +16,7 @@ if(isset($_SESSION["user_id"])){
                                 <i class="bi bi-clipboard2-pulse me-2"></i>
                                 Blood Test Results
                             </h3>
-                            <span class="badge bg-light text-dark">
+                            <span class="badge text-dark">
                                 <i class="bi bi-database me-1"></i>
                                 Test Records
                             </span>
