@@ -19,7 +19,7 @@ if(isset($_SESSION["user_id"])){
                     <h2 class="text-primary">
                         <?php
                             $stmt = $pdo->prepare("SELECT COUNT(*) FROM donneurs AND `id_centre`= ?");
-                            $stmt->execute([$_POST['centre_id']]) ;
+                            $stmt->execute([$_SESSION['centre_id']]) ;
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
@@ -36,7 +36,7 @@ if(isset($_SESSION["user_id"])){
                     <h2 class="text-success">
                         <?php
                             $stmt = $pdo->prepare("SELECT COUNT(*) FROM dons WHERE statut='VALIDE'  AND `id_centre`= ?");
-                            $stmt->execute([$_POST['centre_id']]) ;
+                            $stmt->execute([$_SESSION['centre_id']]) ;
                             echo $stmt->fetchColumn();
                         ?>
                     </h2>
