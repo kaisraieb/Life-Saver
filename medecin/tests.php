@@ -179,8 +179,8 @@ require_once '../config.php';
 require_once '../utils/connection.php'; 
 if(isset($_SESSION["user_id"])){
     if($_SESSION["user_role"] == "MEDECIN") {
-         include 'includes/header.php'; 
-         include "includes/sidebar.php"; ?> 
+         /*include 'includes/header.php'; 
+         include "includes/sidebar.php"; */?> 
           <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
@@ -191,7 +191,7 @@ if(isset($_SESSION["user_id"])){
                                 <i class="bi bi-clipboard2-pulse me-2"></i>
                                 Blood Test Results
                             </h3>
-                            <span class="badge bg-light text-dark">
+                            <span class="badge text-dark">
                                 <i class="bi bi-database me-1"></i>
                                 Test Records
                             </span>
