@@ -1,8 +1,8 @@
 <?php
     $allowedRoles = ['ADMIN', 'SECRETAIRE'];
-    require_once __DIR__ . '/../../utils/connection.php';
-    require_once __DIR__ . '/../includes/check_auth.php';
-    require_once __DIR__ . '/../utils/helpers.php';
+    require_once '../../utils/connection.php';
+    require_once  '/../includes/check_auth.php';
+    require_once '../utils/helpers.php';
 
     $donneurs = get_all_donneurs();
     $centres  = get_all_centres(true);
